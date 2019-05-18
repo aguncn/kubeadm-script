@@ -90,7 +90,7 @@ cert_init() {
 
 function master_install(){
   sudo /usr/local/bin/kubeadm  init --config $kubeadm_conf
-  sudo chown -R devops /etc/kubernetes/
+  sudo chown -R ${General_user} /etc/kubernetes/
   mkdir -p $HOME/.kube
   \cp -f /etc/kubernetes/admin.conf $HOME/.kube/config
   chown $(id -u):$(id -g) $HOME/.kube/config
